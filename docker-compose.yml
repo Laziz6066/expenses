@@ -1,0 +1,38 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: expenses
+    command: python -m app.run
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./data:/app/data  # Только нужные файлы
+    environment:
+      - DB_HOST=database
+      - DB_PORT=5432
+      - DB_NAME=expense
+      - DB_USER=postgres
+      - DB_PASS=52949235
+    depends_on:
+      - database
+    env_file:
+      - .env
+
+  database:
+    image: postgres:14.6-alpine
+    restart: always
+    environment:
+      - POSTGRES_DB=expense
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=52949235
+    env_file:
+      - .env
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
