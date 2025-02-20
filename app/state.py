@@ -1,4 +1,4 @@
-from aiogram.fsm.state import StatesGroup, State
+from aiogram.fsm.state import State, StatesGroup
 
 
 class AddParishes(StatesGroup):
@@ -16,3 +16,18 @@ class AddExpenditure(StatesGroup):
 class AddRemains(StatesGroup):
     cash = State()
     plastic = State()
+
+
+class ReportExpenseState(StatesGroup):
+    start_date = State()
+    end_date = State()
+
+
+class ReportParishState(StatesGroup):
+    start_date = State()
+    end_date = State()
+
+
+class ExchangeMoney(StatesGroup):
+    direction = State()
+    amount = State()
