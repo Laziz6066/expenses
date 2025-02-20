@@ -7,7 +7,7 @@ def generate_parish_png(
         parishes,
         start_date: datetime,
         end_date: datetime,
-        file_path="png/parish_report.png"):
+        file_path="/app/png/parish_report.png"):
     # Настройки таблицы
     headers = ["Название", "Сумма", "Тип", "Дата"]
     col_widths = [200, 150, 150, 200]  # ширина колонок в пикселях
