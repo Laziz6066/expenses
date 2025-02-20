@@ -25,8 +25,8 @@ def generate_parish_png(
     # Загружаем шрифты (убедитесь, что
     # файлы шрифтов доступны по указанному пути)
     try:
-        font = ImageFont.truetype("png/DejaVuSans.ttf", 16)
-        font_bold = ImageFont.truetype("png/DejaVuSans-Bold.ttf", 16)
+        font = ImageFont.truetype("/app/app/png/DejaVuSans.ttf", 16)
+        font_bold = ImageFont.truetype("/app/app/png/DejaVuSans-Bold.ttf", 16)
     except Exception:
         font = ImageFont.load_default()
         font_bold = font

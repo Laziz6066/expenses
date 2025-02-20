@@ -1,7 +1,7 @@
 from PIL import Image, ImageDraw, ImageFont
 
 
-def generate_remains_png(remains, file_path="png/remains_report.png"):
+def generate_remains_png(remains, file_path="/app/app/png/remains_report.png"):
     """
     Генерирует PNG-отчёт по остаткам.
     Аргументы:
@@ -32,8 +32,8 @@ def generate_remains_png(remains, file_path="png/remains_report.png"):
     # Загружаем шрифты (убедитесь, что файлы
     # шрифтов доступны по указанному пути)
     try:
-        font = ImageFont.truetype("png/DejaVuSans.ttf", 20)
-        font_bold = ImageFont.truetype("png/DejaVuSans-Bold.ttf", 20)
+        font = ImageFont.truetype("/app/app/png/DejaVuSans.ttf", 20)
+        font_bold = ImageFont.truetype("/app/app/png/DejaVuSans-Bold.ttf", 20)
     except Exception:
         font = ImageFont.load_default()
         font_bold = font

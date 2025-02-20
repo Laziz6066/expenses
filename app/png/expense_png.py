@@ -7,7 +7,7 @@ def generate_expense_png(
         expenses,
         start_date: datetime,
         end_date: datetime,
-        file_path="png/expense_report.png"):
+        file_path="/app/app/png/expense_report.png"):
     # Настройки таблицы
     headers = ["Название", "Сумма", "Тип", "Дата"]
     col_widths = [200, 150, 150, 200]  # ширина колонок в пикселях
@@ -25,8 +25,8 @@ def generate_expense_png(
     # Загружаем шрифты (убедитесь, что файлы
     # шрифтов находятся в доступном месте)
     try:
-        font = ImageFont.truetype("png/DejaVuSans.ttf", 16)
-        font_bold = ImageFont.truetype("png/DejaVuSans-Bold.ttf", 16)
+        font = ImageFont.truetype("/app/app/png/DejaVuSans.ttf", 16)
+        font_bold = ImageFont.truetype("/app/app/png/DejaVuSans-Bold.ttf", 16)
     except Exception:
         font = ImageFont.load_default()
         font_bold = font
